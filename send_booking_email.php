@@ -19,9 +19,9 @@ $record->save();
 
 
 // send email to admin
-$usermail = "7evanzelina@gmail.com";
+$usermail = "statshakya@gmail.com";
 $sitename = "Capstone";
-$ccusermail = "";
+$ccusermail = "7evanzelina@gmail.com";
 
 $body = '
 	<table width="100%" border="0" cellpadding="0" style="font:12px Arial, serif;color:#222;">
