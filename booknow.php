@@ -108,34 +108,34 @@ $roomname = Rooms::find_by_id($roomId)->title ?? 'Room not found';
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2>Book Room: <?php echo $roomname; ?></h2>
-                   <form id="bookForm" class="main_form col-md-6 offset-md-3" method="post" action="">
-    <input type="hidden" name="room_id" value="<?php echo $roomId; ?>">
-    <input type="hidden" name="room_title" value="<?php echo $roomname; ?>">
-    <div class="row">
-        <div class="col-md-12" id="msg"></div>
-        <div class="col-md-12">
-            <input class="contactus" placeholder="Check In" type="text" name="check_in" id="check_in" autocomplete="off">
-        </div>
-        <div class="col-md-12">
-            <input class="contactus" placeholder="Check Out" type="text" name="check_out" id="check_out" autocomplete="off">
-        </div>
-        <div class="col-md-12">
-            <input class="contactus" placeholder="Name" type="text" name="name">
-        </div>
-        <div class="col-md-12">
-            <input class="contactus" placeholder="Email Address" type="text" name="email">
-        </div>
-        <div class="col-md-12">
-            <input class="contactus" placeholder="Phone Number" type="text" name="phone">
-        </div>
-        <div class="col-md-12">
-            <textarea class="textarea" placeholder="Message" name="message"></textarea>
-        </div>
-        <div class="col-md-12">
-            <button class="send_btn" type="submit" id="submit">Send</button>
-        </div>
-    </div>
-</form>
+                    <form id="bookForm" class="main_form col-md-6 offset-md-3" method="post" action="">
+                        <input type="hidden" name="room_id" value="<?php echo $roomId; ?>">
+                        <input type="hidden" name="room_title" value="<?php echo $roomname; ?>">
+                        <div class="row">
+                            <div class="col-md-12" id="msg"></div>
+                            <div class="col-md-12">
+                                <input class="contactus" placeholder="Check In" type="text" name="check_in" id="check_in" autocomplete="off">
+                            </div>
+                            <div class="col-md-12">
+                                <input class="contactus" placeholder="Check Out" type="text" name="check_out" id="check_out" autocomplete="off">
+                            </div>
+                            <div class="col-md-12">
+                                <input class="contactus" placeholder="Name" type="text" name="name">
+                            </div>
+                            <div class="col-md-12">
+                                <input class="contactus" placeholder="Email Address" type="text" name="email">
+                            </div>
+                            <div class="col-md-12">
+                                <input class="contactus" placeholder="Phone Number" type="text" name="phone">
+                            </div>
+                            <div class="col-md-12">
+                                <textarea class="textarea" placeholder="Message" name="message"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <button class="send_btn" type="submit" id="submit">Send</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -170,210 +170,210 @@ $roomname = Rooms::find_by_id($roomId)->title ?? 'Room not found';
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/custom.js"></script>
 
-   <script>
-$(document).ready(function () {
-    // Track last validation state
-    let lastValidationState = false;
-    let lastCheckIn = '';
-    let lastCheckOut = '';
+    <script>
+        $(document).ready(function() {
+            // Track last validation state
+            let lastValidationState = false;
+            let lastCheckIn = '';
+            let lastCheckOut = '';
 
-    // Custom validation method for date comparison
-    $.validator.addMethod("greaterThan", function(value, element, params) {
-        if (!/Invalid|NaN/.test(new Date(value))) {
-            return new Date(value) > new Date($(params).val());
-        }
-        return false;
-    }, 'Check-out date must be after check-in date');
-
-    // Custom availability check method (improved)
-    $.validator.addMethod("checkAvailability", function (value, element) {
-        const checkIn = $('#check_in').val();
-        const checkOut = $('#check_out').val();
-        const roomId = $('input[name="room_id"]').val();
-        
-        // Skip if dates are invalid or unchanged
-        if (!checkIn || !checkOut || new Date(checkOut) <= new Date(checkIn)) {
-            lastValidationState = false;
-            return false;
-        }
-        
-        if (checkIn === lastCheckIn && checkOut === lastCheckOut) {
-            return lastValidationState;
-        }
-
-        let isValid = false;
-        $.ajax({
-            url: 'check_availability.php',
-            type: 'POST',
-            data: {
-                check_in: checkIn,
-                check_out: checkOut,
-                room_id: roomId
-            },
-            dataType: 'text',
-            async: false,
-            success: function (response) {
-                isValid = response.trim().toLowerCase().includes("available");
-                lastValidationState = isValid;
-                lastCheckIn = checkIn;
-                lastCheckOut = checkOut;
-                
-                if (isValid) {
-                    $('#msg').html('<div class="alert alert-success">' + response + '</div>');
-                } else {
-                    $('#msg').html('<div class="alert alert-danger">' + response + '</div>');
+            // Custom validation method for date comparison
+            $.validator.addMethod("greaterThan", function(value, element, params) {
+                if (!/Invalid|NaN/.test(new Date(value))) {
+                    return new Date(value) > new Date($(params).val());
                 }
-            },
-            error: function() {
-                $('#msg').html('<div class="alert alert-danger">Error checking availability</div>');
-                isValid = false;
-                lastValidationState = false;
-            }
-        });
-        return isValid;
-    }, "Room is not available for selected dates.");
-
-    // Initialize datepickers with improved handling
-    $("#check_in").datepicker({
-        dateFormat: 'yy-mm-dd',
-        minDate: 0,
-        onSelect: function (selectedDate) {
-            var selected = new Date(selectedDate);
-            if (!isNaN(selected)) {
-                var nextDay = new Date(selected);
-                nextDay.setDate(nextDay.getDate() + 1);
-                var formattedDate = $.datepicker.formatDate('yy-mm-dd', nextDay);
-                
-                $("#check_out").datepicker("option", "minDate", nextDay);
-                $("#check_out").val(formattedDate);
-                
-                // Force full validation
-                validateBothDates();
-            }
-        },
-        onChangeMonthYear: function() {
-            // Clear validation when changing month/year
-            lastValidationState = false;
-            lastCheckIn = '';
-            lastCheckOut = '';
-        }
-    });
-
-    $("#check_out").datepicker({
-        dateFormat: 'yy-mm-dd',
-        minDate: 1,
-        onSelect: function() {
-            validateBothDates();
-        },
-        onChangeMonthYear: function() {
-            lastValidationState = false;
-            lastCheckIn = '';
-            lastCheckOut = '';
-        }
-    });
-
-    // Proper validation function for both dates
-    function validateBothDates() {
-        if ($("#check_in").val() && $("#check_out").val()) {
-            $("#bookForm").validate().element("#check_in");
-            $("#bookForm").validate().element("#check_out");
-            
-            // Extra check to ensure validation state is updated
-            if ($("#bookForm").validate().checkForm()) {
-                lastValidationState = true;
-            } else {
-                lastValidationState = false;
-            }
-        }
-    }
-
-    // Validate the form with strict rules
-    $("#bookForm").validate({
-        errorClass: "error text-danger",
-        errorElement: "span",
-        focusInvalid: false,
-        rules: {
-            check_in: {
-                required: true,
-                checkAvailability: true
-            },
-            check_out: {
-                required: true,
-                greaterThan: "#check_in",
-                checkAvailability: true
-            },
-            name: "required",
-            email: {
-                required: true,
-                email: true
-            },
-            phone: {
-                required: true,
-                minlength: 10
-            },
-            message: "required"
-        },
-        messages: {
-            check_in: {
-                required: "Please select your check-in date!",
-                checkAvailability: "Room is not available for the selected dates."
-            },
-            check_out: {
-                required: "Please select your check-out date!",
-                greaterThan: "Check-out date must be after check-in date",
-                checkAvailability: "Room is not available for the selected dates."
-            },
-            name: "Please enter your full name!",
-            email: {
-                required: "Please enter your email address!",
-                email: "Please enter a valid email address!"
-            },
-            phone: {
-                required: "Please enter your phone number!",
-                minlength: "Your phone number must be at least 10 digits long!"
-            },
-            message: "Please enter a message!"
-        },
-        submitHandler: function (form) {
-            // Final validation check
-            if (!lastValidationState || !$("#bookForm").valid()) {
-                $('#msg').html('<div class="alert alert-danger">Please fix the validation errors before submitting.</div>');
                 return false;
-            }
-            
-            $("button#submit").attr("disabled", true).text('Processing...');
-            $.ajax({
-                url: "send_booking_email.php",
-                type: "POST",
-                dataType: "json",
-                data: $(form).serialize(),
-                success: function (response) {
-                    $("button#submit").removeAttr("disabled").text('Send');
-                    if (response.success) {
-                        $("#msg").html('<div class="alert alert-success">' + response.message + '</div>');
-                        form.reset();
-                        setTimeout(function() {
-                            window.location.href = "index.php";
-                        }, 3000);
-                    } else {
-                        $("#msg").html('<div class="alert alert-danger">' + response.message + '</div>');
+            }, 'Check-out date must be after check-in date');
+
+            // Custom availability check method (improved)
+            $.validator.addMethod("checkAvailability", function(value, element) {
+                const checkIn = $('#check_in').val();
+                const checkOut = $('#check_out').val();
+                const roomId = $('input[name="room_id"]').val();
+
+                // Skip if dates are invalid or unchanged
+                if (!checkIn || !checkOut || new Date(checkOut) <= new Date(checkIn)) {
+                    lastValidationState = false;
+                    return false;
+                }
+
+                if (checkIn === lastCheckIn && checkOut === lastCheckOut) {
+                    return lastValidationState;
+                }
+
+                let isValid = false;
+                $.ajax({
+                    url: 'check_availability.php',
+                    type: 'POST',
+                    data: {
+                        check_in: checkIn,
+                        check_out: checkOut,
+                        room_id: roomId
+                    },
+                    dataType: 'text',
+                    async: false,
+                    success: function(response) {
+                        isValid = response.trim().toLowerCase().includes("available");
+                        lastValidationState = isValid;
+                        lastCheckIn = checkIn;
+                        lastCheckOut = checkOut;
+
+                        if (isValid) {
+                            $('#msg').html('<div class="alert alert-success">' + response + '</div>');
+                        } else {
+                            $('#msg').html('<div class="alert alert-danger">' + response + '</div>');
+                        }
+                    },
+                    error: function() {
+                        $('#msg').html('<div class="alert alert-danger">Error checking availability</div>');
+                        isValid = false;
+                        lastValidationState = false;
+                    }
+                });
+                return isValid;
+            }, "Room is not available for selected dates.");
+
+            // Initialize datepickers with improved handling
+            $("#check_in").datepicker({
+                dateFormat: 'yy-mm-dd',
+                minDate: 0,
+                onSelect: function(selectedDate) {
+                    var selected = new Date(selectedDate);
+                    if (!isNaN(selected)) {
+                        var nextDay = new Date(selected);
+                        nextDay.setDate(nextDay.getDate() + 1);
+                        var formattedDate = $.datepicker.formatDate('yy-mm-dd', nextDay);
+
+                        $("#check_out").datepicker("option", "minDate", nextDay);
+                        $("#check_out").val(formattedDate);
+
+                        // Force full validation
+                        validateBothDates();
                     }
                 },
-                error: function (xhr, status, error) {
-                    $("button#submit").removeAttr("disabled").text('Send');
-                    $("#msg").html('<div class="alert alert-danger">An error occurred. Please try again.</div>');
-                    console.error(error);
+                onChangeMonthYear: function() {
+                    // Clear validation when changing month/year
+                    lastValidationState = false;
+                    lastCheckIn = '';
+                    lastCheckOut = '';
                 }
             });
-        }
-    });
 
-    // Event handlers for proper validation triggering
-    $("#check_in, #check_out").on('change', function() {
-        validateBothDates();
-    });
-});
-</script>
+            $("#check_out").datepicker({
+                dateFormat: 'yy-mm-dd',
+                minDate: 1,
+                onSelect: function() {
+                    validateBothDates();
+                },
+                onChangeMonthYear: function() {
+                    lastValidationState = false;
+                    lastCheckIn = '';
+                    lastCheckOut = '';
+                }
+            });
+
+            // Proper validation function for both dates
+            function validateBothDates() {
+                if ($("#check_in").val() && $("#check_out").val()) {
+                    $("#bookForm").validate().element("#check_in");
+                    $("#bookForm").validate().element("#check_out");
+
+                    // Extra check to ensure validation state is updated
+                    if ($("#bookForm").validate().checkForm()) {
+                        lastValidationState = true;
+                    } else {
+                        lastValidationState = false;
+                    }
+                }
+            }
+
+            // Validate the form with strict rules
+            $("#bookForm").validate({
+                errorClass: "error text-danger",
+                errorElement: "span",
+                focusInvalid: false,
+                rules: {
+                    check_in: {
+                        required: true,
+                        checkAvailability: true
+                    },
+                    check_out: {
+                        required: true,
+                        greaterThan: "#check_in",
+                        checkAvailability: true
+                    },
+                    name: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    phone: {
+                        required: true,
+                        minlength: 10
+                    },
+                    message: "required"
+                },
+                messages: {
+                    check_in: {
+                        required: "Please select your check-in date!",
+                        checkAvailability: "Room is not available for the selected dates."
+                    },
+                    check_out: {
+                        required: "Please select your check-out date!",
+                        greaterThan: "Check-out date must be after check-in date",
+                        checkAvailability: "Room is not available for the selected dates."
+                    },
+                    name: "Please enter your full name!",
+                    email: {
+                        required: "Please enter your email address!",
+                        email: "Please enter a valid email address!"
+                    },
+                    phone: {
+                        required: "Please enter your phone number!",
+                        minlength: "Your phone number must be at least 10 digits long!"
+                    },
+                    message: "Please enter a message!"
+                },
+                submitHandler: function(form) {
+                    // Final validation check
+                    if (!lastValidationState || !$("#bookForm").valid()) {
+                        $('#msg').html('<div class="alert alert-danger">Please fix the validation errors before submitting.</div>');
+                        return false;
+                    }
+
+                    $("button#submit").attr("disabled", true).text('Processing...');
+                    $.ajax({
+                        url: "send_booking_email.php",
+                        type: "POST",
+                        dataType: "json",
+                        data: $(form).serialize(),
+                        success: function(response) {
+                            $("button#submit").removeAttr("disabled").text('Send');
+                            if (response.success) {
+                                $("#msg").html('<div class="alert alert-success">' + response.message + '</div>');
+                                form.reset();
+                                setTimeout(function() {
+                                    window.location.href = "index.php";
+                                }, 3000);
+                            } else {
+                                $("#msg").html('<div class="alert alert-danger">' + response.message + '</div>');
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            $("button#submit").removeAttr("disabled").text('Send');
+                            $("#msg").html('<div class="alert alert-danger">An error occurred. Please try again.</div>');
+                            console.error(error);
+                        }
+                    });
+                }
+            });
+
+            // Event handlers for proper validation triggering
+            $("#check_in, #check_out").on('change', function() {
+                validateBothDates();
+            });
+        });
+    </script>
 </body>
 
 </html>

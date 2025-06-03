@@ -29,6 +29,19 @@ class Bookings
         return $check;
     }
 
+    public static function check_available_room($check_in, $check_out, $roomId)
+    {
+        global $db;
+        $sql = "SELECT COUNT(*) as booked_rooms FROM bookings 
+                WHERE room_id = '" . $roomId . "' 
+                AND ((check_in <= '" . $check_in . "' AND check_out >= '" . $check_out . "') OR 
+                    (check_in >= '" . $check_in . "' AND check_in <= '" . $check_out . "') OR 
+                    (check_in <= '" . $check_in . "' AND check_out >= '" . $check_out . "'))";
+        $check = $db->query($sql)  or die(mysqli_connect_errno() . "Query Doesnt run");;
+
+        return $check;
+    }
+
     public function booknow($checkin, $checkout, $name, $phone, $roomname)
     {
 
