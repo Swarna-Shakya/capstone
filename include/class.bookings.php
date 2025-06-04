@@ -42,6 +42,46 @@ class Bookings
         return $check;
     }
 
+    public static function check_available_new($check_in, $check_out)
+    {
+        global $db;
+
+        $sql = "
+            SELECT 
+                r.id AS room_id,
+                r.title AS room_title,
+                r.room_qnty,
+                IFNULL(b.booked_count, 0) AS booked_count,
+                (r.room_qnty - IFNULL(b.booked_count, 0)) AS available_rooms,
+                r.price,
+                r.currency,
+                r.content,
+                r.beds,
+                r.bed_type,
+                r.image
+            FROM 
+                rooms r
+            LEFT JOIN (
+                SELECT 
+                    room_id, 
+                    COUNT(*) AS booked_count
+                FROM 
+                    bookings
+                WHERE 
+                    NOT (
+                        check_out <= '$check_in' OR check_in >= '$check_out'
+                    )
+                GROUP BY room_id
+            ) b ON r.id = b.room_id
+            WHERE (r.room_qnty - IFNULL(b.booked_count, 0)) > 0
+        ";
+
+        $result = $db->query($sql) or die(mysqli_error($db));
+
+        return $result;
+    }
+
+
     public function booknow($checkin, $checkout, $name, $phone, $roomname)
     {
 

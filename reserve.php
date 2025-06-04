@@ -1,13 +1,5 @@
 <?php
 include_once("include/initialize.php");
-
-if (isset($_REQUEST['submit'])) {
-    extract($_REQUEST);
-    $result = Bookings::check_available($check_in, $check_out);
-    if (!($result)) {
-        echo $result;
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -118,58 +110,29 @@ if (isset($_REQUEST['submit'])) {
                 </div>
             </div>
             <div class="row">
-                <?php
-
-                if (isset($_REQUEST['submit'])) {
-                    if (mysqli_num_rows($result) < 0) {
-                        while ($row = mysqli_fetch_array($result)) {
-                            $room_id = $row['room_id'];
-                            $sql = "SELECT * FROM rooms WHERE id='$room_id'";
-                            $query = $db->query($sql);
-                            $row2 = mysqli_fetch_object($query);
-                ?>
+                <?php if (isset($_REQUEST['submit'])) {
+                    extract($_REQUEST);
+                    $available_rooms = Bookings::check_available_new($check_in, $check_out);
+                    if ($available_rooms && $available_rooms->num_rows > 0) {
+                        while ($room = $available_rooms->fetch_object()) { ?>
                             <div class=" col-md-4 col-sm-6">
                                 <div id="serv_hover" class="room">
                                     <div class="room_img">
-                                        <figure><img src="images/rooms/<?= $row2->image; ?>" alt="<?= $row2->title; ?>" /></figure>
+                                        <figure><img src="images/rooms/<?= $room->image; ?>" alt="<?= $room->room_title; ?>" /></figure>
                                     </div>
                                     <div class="bed_room">
-                                        <h3><?= $row2->title; ?></h3>
-                                        <p><?= $row2->content; ?> </p>
-                                        <p>No. of beds: <?php echo $row2->beds; ?> <?= $row2->bed_type ?></p>
-                                        <p>Available Rooms: <?php echo $row2->available; ?></p>
-                                        <p>Price: <?= $row2->currency ?> <?= $row2->price ?></p>
-                                        <a class="btn btn-primary mt-2 rounded text-white" href="booknow.php?roomid=<?= $row2->id ?>">Book Now</a>
+                                        <h3><?= $room->room_title; ?></h3>
+                                        <p><?= $room->content; ?> </p>
+                                        <p>No. of beds: <?php echo $room->beds; ?> <?= $room->bed_type ?></p>
+                                        <p>Available Rooms: <?php echo $room->available_rooms; ?></p>
+                                        <p>Price: <?= $room->currency ?> <?= $room->price ?></p>
+                                        <a class="btn btn-primary mt-2 rounded text-white" href="booknow.php?roomid=<?= $room->room_id ?>">Book Now</a>
                                     </div>
                                 </div>
                             </div>
-                            <?php
-                        }
+                <?php }
                     } else {
-                        // Fetch room data from the database
-                        $query = "SELECT * FROM rooms ORDER BY id DESC";
-                        $rooms = Rooms::find_by_sql($query);
-                        if ($rooms) {
-                            foreach ($rooms as $room) {
-                            ?>
-                                <div class=" col-md-4 col-sm-6">
-                                    <div id="serv_hover" class="room">
-                                        <div class="room_img">
-                                            <figure><img src="images/rooms/<?= $room->image; ?>" alt="<?= $room->title; ?>" /></figure>
-                                        </div>
-                                        <div class="bed_room">
-                                            <h3><?= $room->title; ?></h3>
-                                            <p><?= $room->content; ?> </p>
-                                            <p>No. of beds: <?php echo $room->beds; ?> <?= $room->bed_type ?></p>
-                                            <p>Available Rooms: <?php echo $room->available; ?></p>
-                                            <p>Price: <?= $room->currency ?> <?= $room->price ?></p>
-                                            <a class="btn btn-primary mt-2 rounded text-white" href="booknow.php?roomid=<?= $room->id ?>">Book Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                <?php
-                            }
-                        }
+                        echo "No rooms available for selected dates.";
                     }
                 }
                 ?>
