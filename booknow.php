@@ -172,12 +172,9 @@ $roomname = Rooms::find_by_id($roomId)->title ?? 'Room not found';
 
     <script>
         $(document).ready(function() {
-            // Track last validation state
-            let lastValidationState = false;
-            let lastCheckIn = '';
-            let lastCheckOut = '';
+            let availabilityCache = {};
 
-            // Custom validation method for date comparison
+            // Custom validator: check-out must be greater than check-in
             $.validator.addMethod("greaterThan", function(value, element, params) {
                 if (!/Invalid|NaN/.test(new Date(value))) {
                     return new Date(value) > new Date($(params).val());
@@ -185,23 +182,24 @@ $roomname = Rooms::find_by_id($roomId)->title ?? 'Room not found';
                 return false;
             }, 'Check-out date must be after check-in date');
 
-            // Custom availability check method (improved)
+            // Custom validator: check room availability via AJAX
             $.validator.addMethod("checkAvailability", function(value, element) {
                 const checkIn = $('#check_in').val();
                 const checkOut = $('#check_out').val();
                 const roomId = $('input[name="room_id"]').val();
 
-                // Skip if dates are invalid or unchanged
                 if (!checkIn || !checkOut || new Date(checkOut) <= new Date(checkIn)) {
-                    lastValidationState = false;
                     return false;
                 }
 
-                if (checkIn === lastCheckIn && checkOut === lastCheckOut) {
-                    return lastValidationState;
+                const cacheKey = `${roomId}_${checkIn}_${checkOut}`;
+
+                if (availabilityCache.hasOwnProperty(cacheKey)) {
+                    return availabilityCache[cacheKey]; // Return cached result
                 }
 
                 let isValid = false;
+
                 $.ajax({
                     url: 'check_availability.php',
                     type: 'POST',
@@ -214,9 +212,7 @@ $roomname = Rooms::find_by_id($roomId)->title ?? 'Room not found';
                     async: false,
                     success: function(response) {
                         isValid = response.trim().toLowerCase().includes("available");
-                        lastValidationState = isValid;
-                        lastCheckIn = checkIn;
-                        lastCheckOut = checkOut;
+                        availabilityCache[cacheKey] = isValid;
 
                         if (isValid) {
                             $('#msg').html('<div class="alert alert-success">' + response + '</div>');
@@ -226,36 +222,33 @@ $roomname = Rooms::find_by_id($roomId)->title ?? 'Room not found';
                     },
                     error: function() {
                         $('#msg').html('<div class="alert alert-danger">Error checking availability</div>');
-                        isValid = false;
-                        lastValidationState = false;
+                        availabilityCache[cacheKey] = false;
                     }
                 });
+
                 return isValid;
             }, "Room is not available for selected dates.");
 
-            // Initialize datepickers with improved handling
+            // Initialize datepickers
             $("#check_in").datepicker({
                 dateFormat: 'yy-mm-dd',
                 minDate: 0,
                 onSelect: function(selectedDate) {
-                    var selected = new Date(selectedDate);
+                    let selected = new Date(selectedDate);
                     if (!isNaN(selected)) {
-                        var nextDay = new Date(selected);
+                        let nextDay = new Date(selected);
                         nextDay.setDate(nextDay.getDate() + 1);
-                        var formattedDate = $.datepicker.formatDate('yy-mm-dd', nextDay);
+                        let formattedDate = $.datepicker.formatDate('yy-mm-dd', nextDay);
 
                         $("#check_out").datepicker("option", "minDate", nextDay);
                         $("#check_out").val(formattedDate);
 
-                        // Force full validation
+                        availabilityCache = {}; // Clear cache
                         validateBothDates();
                     }
                 },
                 onChangeMonthYear: function() {
-                    // Clear validation when changing month/year
-                    lastValidationState = false;
-                    lastCheckIn = '';
-                    lastCheckOut = '';
+                    availabilityCache = {};
                 }
             });
 
@@ -263,31 +256,23 @@ $roomname = Rooms::find_by_id($roomId)->title ?? 'Room not found';
                 dateFormat: 'yy-mm-dd',
                 minDate: 1,
                 onSelect: function() {
+                    availabilityCache = {};
                     validateBothDates();
                 },
                 onChangeMonthYear: function() {
-                    lastValidationState = false;
-                    lastCheckIn = '';
-                    lastCheckOut = '';
+                    availabilityCache = {};
                 }
             });
 
-            // Proper validation function for both dates
+            // Validate both date fields
             function validateBothDates() {
                 if ($("#check_in").val() && $("#check_out").val()) {
                     $("#bookForm").validate().element("#check_in");
                     $("#bookForm").validate().element("#check_out");
-
-                    // Extra check to ensure validation state is updated
-                    if ($("#bookForm").validate().checkForm()) {
-                        lastValidationState = true;
-                    } else {
-                        lastValidationState = false;
-                    }
                 }
             }
 
-            // Validate the form with strict rules
+            // Setup form validation
             $("#bookForm").validate({
                 errorClass: "error text-danger",
                 errorElement: "span",
@@ -335,12 +320,6 @@ $roomname = Rooms::find_by_id($roomId)->title ?? 'Room not found';
                     message: "Please enter a message!"
                 },
                 submitHandler: function(form) {
-                    // Final validation check
-                    if (!lastValidationState || !$("#bookForm").valid()) {
-                        $('#msg').html('<div class="alert alert-danger">Please fix the validation errors before submitting.</div>');
-                        return false;
-                    }
-
                     $("button#submit").attr("disabled", true).text('Processing...');
                     $.ajax({
                         url: "send_booking_email.php",
@@ -368,8 +347,9 @@ $roomname = Rooms::find_by_id($roomId)->title ?? 'Room not found';
                 }
             });
 
-            // Event handlers for proper validation triggering
+            // Refresh validation on date change
             $("#check_in, #check_out").on('change', function() {
+                availabilityCache = {};
                 validateBothDates();
             });
         });
