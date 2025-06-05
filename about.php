@@ -118,24 +118,9 @@
 
 
    <!--  footer -->
-   <footer>
-      <div class="footer">
-         <div class="copyright">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-10 offset-md-1">
-
-                     <p>
-                        © 2025 All Rights Reserved. Developed by <a href="#"> Capstone.in</a>
-                     </p>
-
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </footer>
+   <?php include 'include/footer.php'; ?>
    <!-- end footer -->
+    
    <!-- Javascript files-->
    <script src="js/jquery.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
