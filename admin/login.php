@@ -32,6 +32,9 @@ require_once '../include/initialize.php';
                 <button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
             </div>
         </div>
+        <?php 
+        // pr($_SESSION);
+        ?>
 
         <div class="main-panel" style="width: 100%;">
             <div class="content">
@@ -39,24 +42,27 @@ require_once '../include/initialize.php';
                     <div class="row">
                         <div class="col-md-6 ml-auto mr-auto">
                             <div class="card">
+                                <form id="loginform">
                                 <div class="card-header">
                                     <div class="card-title">Log In</div>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="email">Email Address</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                                        <input type="text" class="form-control" id="email" placeholder="Enter Email" name="user">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password" placeholder="Password">
+                                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                                     </div>
 
                                 </div>
                                 <div class="card-action">
-                                    <button class="btn btn-success">Submit</button>
+                                    <button class="btn btn-success" id="login">Submit</button>
                                 </div>
+                            </form>
                             </div>
+                            
                         </div>
 
                     </div>
@@ -79,5 +85,65 @@ require_once '../include/initialize.php';
 <script src="assets/js/core/bootstrap.min.js"></script>
 <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 <script src="assets/js/ready.min.js"></script>
+ <script src="assets/js/jquery.validate.js"></script>
 
+
+ <script>
+        $(document).ready(function() {
+       
+            $("#loginform").validate({
+                errorClass: "error text-danger",
+                errorElement: "span",
+                focusInvalid: false,
+                rules: {
+                    user: {
+                        required: true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 2
+                    }
+                    },
+                messages: {
+                    email: {
+                        required: "Please enter your email address!"
+                    },
+                    password: {
+                        required: "Please enter your password!",
+                        minlength: "Your phone number must be at least 3 digits long!"
+                    }
+                },
+                submitHandler: function(form) {
+                    $("button#login").attr("disabled", true).text('Processing...');
+                    var action = "action=checkLogin&";
+                    var data = $('#loginform').serialize();
+                    queryString = action+data;
+                    $.ajax({
+                        url: "ajax/user.php",
+                        type: "POST",
+                        dataType: "json",
+                        data: queryString,
+                        success: function(response) {
+                            $("button#login").removeAttr("disabled").text('Send');
+                            if (response.action === "success") {
+                                $("#msg").html('<div class="alert alert-success">' + response.message + '</div>');
+                                form.reset();
+                                setTimeout(function() {
+                                    window.location.href = "check_login.php";
+                                }, 3000);
+                            } else {
+                                $("#msg").html('<div class="alert alert-danger">' + response.message + '</div>');
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            $("button#login").removeAttr("disabled").text('Send');
+                            $("#msg").html('<div class="alert alert-danger">An error occurred. Please try again.</div>');
+                            console.error(error);
+                        }
+                    });
+                }
+            });
+
+        });
+    </script>
 </html>

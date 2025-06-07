@@ -33,6 +33,21 @@ class User
         }
         return $object_array;
     }
+  public static function authenticateAdmin($username = "", $password = "")
+    {
+        global $db;
+        $username = $db->escape_value($username);
+        $password = $db->escape_value($password);
+
+        $sql = "SELECT * FROM " . self::$table_name . " ";
+        $sql .= "WHERE user_name='{$username}' ";
+        // $sql.= "AND password='{$password}' AND group_id=1 ";
+        $sql .= "AND pass_word='{$password}' ";
+        $sql .= "LIMIT 1";
+
+        $result_array = self::find_by_sql($sql);
+        return !empty($result_array) ? array_shift($result_array) : false;
+    }
 
     //Instantiate all the attributes of the Class.
     private static function instantiate($record)

@@ -8,3 +8,4 @@ include_once("functions.php");
 include_once("class.phpmailer.php");
 include_once("class.rooms.php");
 require_once("class.bookings.php");
+require_once("class.user.php");
