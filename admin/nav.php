@@ -170,9 +170,19 @@ confirm_logged_in();
 								<i class="la la-table"></i>
 								<p>Booking</p>
 								<?php $bookingdatas= bookings::find_all();
-								$count=count($bookingdatas, 0);
+								$countbooking=count($bookingdatas, 0);
 								 ?>
-								<span class="badge badge-count"><?php echo  $count;?></span>
+								<span class="badge badge-count"><?php echo  $countbooking;?></span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="rooms.php">
+								<i class="la la-table"></i>
+								<p>Rooms</p>
+								<?php $roomsdatas= Rooms::find_all();
+								$countroom=count($roomsdatas, 0);
+								 ?>
+								<span class="badge badge-count"><?php echo  $countroom;?></span>
 							</a>
 						</li>
 						<!--<li class="nav-item">
