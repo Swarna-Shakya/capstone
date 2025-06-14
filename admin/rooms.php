@@ -27,7 +27,7 @@ require_once '../include/initialize.php';
 									</div>
 									<div class="card-body">
 										<div class="card-sub">									
-											This is the basic table view of the ready dashboard :
+											This is the basic table view of the ready dashboard : <a href="roomedit.php" class="btn btn-success"><i class="la la-edit"></i></a>
 										</div>
 										<table class="table mt-3">
 											<thead>

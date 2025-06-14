@@ -12,8 +12,11 @@
 <body>
 	<div class="wrapper">
 		<?php require_once 'nav.php';
-        $roomId = $_GET['roomid'] ?? null;
-        $roomdata= rooms::find_by_id($roomId);?>
+        $roomId = $_GET['roomid'] ?? '';
+        if(!empty($roomId)){
+        $roomdata= rooms::find_by_id($roomId);
+}
+?>
 			<div class="main-panel">
 				<div class="content">
 					<div class="container-fluid">
@@ -22,8 +25,9 @@
 							<div class="col-md-10">
 								<div class="card">
 									<div class="card-header">
-										<div class="card-title"> <?php echo 'Edit'.' '.$roomdata->title.' '. 'Room' ?></div>
+										<div class="card-title"> <?php echo 'Edit'.' '.(!empty($roomdata->title) ? $roomdata->title : ""). 'Room' ?></div>
 									</div>
+                                    <form id="addeditform">
 									<div class="card-body">
 										<div class="form-group">
 											<label for="Room Title">Room Title</label>
@@ -45,13 +49,20 @@
 											<label for="Room price">Room price</label>
 											<input type="text" class="form-control" id="price" name="price" placeholder="Enter your room price" value="<?php echo !empty($roomdata->price) ? $roomdata->price : ""; ?>">
 										</div>
-                                      
+                                      <div class="form-group">
+												<label for="content">Content</label>
+												<textarea class="form-control" id="content" name="content" rows="5">
+<?php echo !empty($roomdata->content) ? $roomdata->content : ""; ?>
+												</textarea>
+											</div>
 										</div>
+                                        <div id="msg"></div>
 										<div class="card-action">
-											<button class="btn btn-success">Submit</button>
+											<button class="btn btn-success" type="submit" id="submit">Submit</button>
 											<a class="btn btn-danger" href="rooms.php">Cancel</a>
 										</div>
 									</div>
+                                    </form>
 								</div>
 							</div>
 						</div>
@@ -121,4 +132,62 @@
 <script src="assets/js/plugin/chart-circle/circles.min.js"></script>
 <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 <script src="assets/js/ready.min.js"></script>
+  <script src="assets/js/jquery.validate.js"></script>
+
+
+<script>
+    $("#addeditform").validate({
+                errorClass: "error text-danger",
+                errorElement: "span",
+                focusInvalid: false,
+                rules: {
+                   
+                    title: "required",
+                    room_qnty: "required",
+                    bed_type: "required",
+                    currency: "required",
+                    price: "required",
+                    
+                    content: "required"
+                },
+                messages: {
+                    
+                    title: "Please enter Room title!",
+                    room_qnty: "Please enter total no of rooms!",
+                    bed_type: "Please enter Bed type!",
+                    currency: "Please enter currency!",
+                    price: "Please enter price!",
+                    content: "Please enter room content!"
+                },
+               submitHandler: function(form) {
+                    $("button#login").attr("disabled", true).text('Processing...');
+                    var action = "action=add&";
+                    var data = $('#addeditform').serialize();
+                    queryString = action+data;
+                    $.ajax({
+                        url: "ajax/room.php",
+                        type: "POST",
+                        dataType: "json",
+                        data: queryString,
+                        success: function(response) {
+                            $("button#login").removeAttr("disabled").text('Send');
+                            if (response.action === "success") {
+                                $("#msg").html('<div class="alert alert-success">' + response.message + '</div>');
+                                form.reset();
+                                setTimeout(function() {
+                                    window.location.href = "rooms.php";
+                                }, 3000);
+                            } else {
+                                $("#msg").html('<div class="alert alert-danger">' + response.message + '</div>');
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            $("button#login").removeAttr("disabled").text('Send');
+                            $("#msg").html('<div class="alert alert-danger">An error occurred. Please try again.</div>');
+                            console.error(error);
+                        }
+                    });
+                }
+            });
+</script>
 </html>
