@@ -33,17 +33,14 @@ class User
         }
         return $object_array;
     }
-  public static function authenticateAdmin($username = "", $password = "")
+
+    public static function authenticateAdmin($email = "", $password = "")
     {
         global $db;
-        $username = $db->escape_value($username);
-        $password = $db->escape_value($password);
+        $email      = $db->escape_value($email);
+        $password   = $db->escape_value($password);
 
-        $sql = "SELECT * FROM " . self::$table_name . " ";
-        $sql .= "WHERE user_name='{$username}' ";
-        // $sql.= "AND password='{$password}' AND group_id=1 ";
-        $sql .= "AND pass_word='{$password}' ";
-        $sql .= "LIMIT 1";
+        $sql = "SELECT * FROM " . self::$table_name . " WHERE email='{$email}' AND pass_word='{$password}' LIMIT 1";
 
         $result_array = self::find_by_sql($sql);
         return !empty($result_array) ? array_shift($result_array) : false;

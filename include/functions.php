@@ -55,7 +55,9 @@ function randomKeys($length, $pattern = '')
     }
     return $key;
 }
-function confirm_logged_in() {
+
+function confirm_logged_in()
+{
     global $session;
 
     if (!$session->get('u_id')) {
