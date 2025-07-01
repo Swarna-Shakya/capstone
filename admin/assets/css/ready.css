@@ -6667,7 +6667,7 @@ body {
   }
 
   .profile-pic span {
-    display: none;
+    /* display: none; */
   }
 }
 
