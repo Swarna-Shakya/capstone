@@ -35,15 +35,15 @@ confirm_logged_in();
 				<a href="index.php">
 					<i class="la la-dashboard"></i>
 					<p>Dashboard</p>
-					<!--<span class="badge badge-count">5</span>-->
 				</a>
 			</li>
 			<li class="nav-item">
 				<a href="booking.php">
 					<i class="la la-table"></i>
 					<p>Booking</p>
-					<?php $bookingdatas = bookings::find_all();
-					$countbooking = count($bookingdatas, 0);
+					<?php
+					$bookingdatas 	= bookings::find_all();
+					$countbooking 	= count($bookingdatas, 0);
 					?>
 					<span class="badge badge-count"><?php echo  $countbooking; ?></span>
 				</a>
@@ -52,8 +52,9 @@ confirm_logged_in();
 				<a href="rooms.php">
 					<i class="la la-table"></i>
 					<p>Rooms</p>
-					<?php $roomsdatas = Rooms::find_all();
-					$countroom = count($roomsdatas, 0);
+					<?php
+					$roomsdatas 	= Rooms::find_all();
+					$countroom 		= count($roomsdatas, 0);
 					?>
 					<span class="badge badge-count"><?php echo  $countroom; ?></span>
 				</a>
