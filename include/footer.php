@@ -13,3 +13,6 @@
         </div>
     </div>
 </footer>
+
+<!-- Chatbot Widget -->
+<?php include 'include/chatbot_widget.php'; ?>
