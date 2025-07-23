@@ -4,9 +4,9 @@ class Rooms
 {
 
     protected static $table_name = "rooms";
-    protected static $db_fields = array('id', 'title', 'room_qnty', 'available', 'booked', 'beds', 'bed_type', 'content', 'currency', 'price', 'image', 'created_at', 'updated_at');
+    protected static $db_fields = array('id', 'title', 'room_qnty', 'beds', 'bed_type', 'content', 'currency', 'price', 'image', 'created_at', 'updated_at');
 
-    public $id, $title, $room_qnty, $available, $booked, $beds, $bed_type, $content, $currency, $price, $image, $created_at, $updated_at;
+    public $id, $title, $room_qnty, $beds, $bed_type, $content, $currency, $price, $image, $created_at, $updated_at;
 
     public static function find_all()
     {
