@@ -15,7 +15,7 @@ confirm_logged_in();
 		<div class="container-fluid">
 			<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 				<li class="nav-item dropdown">
-					<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"><span>Hizrian</span></a>
+					<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"><span><?php echo $_SESSION['loginUser']; ?></span></a>
 					<ul class="dropdown-menu dropdown-user">
 						<a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
 						<div class="dropdown-divider"></div>
@@ -45,7 +45,7 @@ confirm_logged_in();
 					$bookingdatas 	= bookings::find_all();
 					$countbooking 	= count($bookingdatas, 0);
 					?>
-					<span class="badge badge-count"><?php echo  $countbooking; ?></span>
+					<span class="badge badge-count badge-success"><?php echo  $countbooking; ?></span>
 				</a>
 			</li>
 			<li class="nav-item">
@@ -56,7 +56,7 @@ confirm_logged_in();
 					$roomsdatas 	= Rooms::find_all();
 					$countroom 		= count($roomsdatas, 0);
 					?>
-					<span class="badge badge-count"><?php echo  $countroom; ?></span>
+					<span class="badge badge-count badge-success"><?php echo  $countroom; ?></span>
 				</a>
 			</li>
 		</ul>

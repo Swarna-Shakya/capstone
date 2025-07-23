@@ -118,4 +118,16 @@ class Rooms
         return ($db->affected_rows() == 1) ? true : false;
         //return true;
     }
+
+    //Delete a row from the database.
+    public function delete()
+    {
+        global $db;
+        $sql = "DELETE FROM " . self::$table_name;
+        $sql .= " WHERE id=" . $db->escape_value($this->id);
+        $sql .= " LIMIT 1";
+        $db->query($sql);
+        return ($db->affected_rows() == 1) ? true : false;
+    }
+
 }
