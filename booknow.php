@@ -142,7 +142,7 @@ $roomname = Rooms::find_by_id($roomId)->title ?? 'Room not found';
     </div>
     <!-- end contact -->
     <!--  footer -->
-    <php include_once("include/footer.php"); ?>
+    <?php include_once("include/footer.php"); ?>
     <!-- end footer -->
      
     <!-- Javascript files-->
@@ -320,7 +320,7 @@ $roomname = Rooms::find_by_id($roomId)->title ?? 'Room not found';
                                     window.location.href = "index.php";
                                 }, 3000);
                             } else {
-                                $("#msg").html('<div class="alert alert-danger">' + response.message + '</div>');
+                                $("#msg").html('<div class="alert alert-success">' + response.message + '</div>');
                             }
                         },
                         error: function(xhr, status, error) {
