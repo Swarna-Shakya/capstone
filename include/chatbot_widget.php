@@ -6,7 +6,7 @@
     
     <div class="chatbot-box" id="chatbotBox">
         <div class="chatbot-header">
-            <h3><i class="fa fa-concierge-bell"></i> Hotel Assistant</h3>
+            <h3><i class="fa fa-robot"></i> Hotel Assistant</h3>
             <span class="chatbot-close" id="chatbotClose">&times;</span>
         </div>
         
@@ -110,6 +110,7 @@
         font-size: 18px;
         display: flex;
         align-items: center;
+        color: #fff;
     }
     
     .chatbot-header h3 i {
@@ -201,6 +202,7 @@
         border-bottom-left-radius: 4px;
         color: var(--dark-color);
         border-left: 3px solid var(--secondary-color);
+        margin-left: 20px;
     }
     
     .bot-message::before {
@@ -211,7 +213,7 @@
         transform: translateY(-50%);
         width: 28px;
         height: 28px;
-        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xMiAwYzYuNjI3IDAgMTIgNS4zNzMgMTIgMTJzLTUuMzczIDEyLTEyIDEyLTEyLTUuMzczLTEyLTEyIDUuMzczLTEyIDEyLTEyem0wIDJjNS41MTQgMCAxMCA0LjQ4NiAxMCAxMHMtNC40ODYgMTAtMTAgMTAtMTAtNC40ODYtMTAtMTAgNC40ODYtMTAgMTAtMTB6bS0yLjQyNiA1LjM2NWMtLjUxOC0uNTE3LTEuMzYzLS41MTctMS44OCAwLS41MTguNTE3LS41MTggMS4zNiAwIDEuODc5bDIuNDI2IDIuNDI1LTIuNDI2IDIuNDI3Yy0uNTE4LjUxNy0uNTE4IDEuMzYgMC4xODc5LjUxNy0uNTE3IDEuMzYyLjUxNyAxLjg4IDBsNC4yNDgtNC4yNDVjLjUxNy0uNTIuNTE3LTEuMzYgMC0xLjg4bC00LjI0OC00LjQ4NXoiLz48L3N2Zz4=');
+        background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjNDA0MDQwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48cGF0aCBkPSJNMjAgMmgtMTRjLTEuMTA0IDAtMiAuODk2LTIgMnYxMmMwIDEuMTA0Ljg5NiAyIDIgMmg0djRMMTggMTZoMnYtMTBjMC0xLjEwNC0uODk2LTItMi0yek0xMiAxMmg4di0yaC04djJ6TTQgMTBoMnYtMmgtMnYyeiIvPjwvc3ZnPg==');
         background-size: contain;
         background-repeat: no-repeat;
         opacity: 0.7;
