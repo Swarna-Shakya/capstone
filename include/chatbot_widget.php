@@ -58,7 +58,7 @@
         width: 65px;
         height: 65px;
         border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary-color), #2a4fa8);
+        background: linear-gradient(135deg, var(--primary-color), #3c6ad4ff);
         color: white;
         display: flex;
         justify-content: center;
