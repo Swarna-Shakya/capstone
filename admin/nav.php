@@ -17,8 +17,8 @@ confirm_logged_in();
 				<li class="nav-item dropdown">
 					<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"><span><?php echo $_SESSION['loginUser']; ?></span></a>
 					<ul class="dropdown-menu dropdown-user">
-						<a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
-						<div class="dropdown-divider"></div>
+						<!--<a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
+						<div class="dropdown-divider"></div>-->
 						<a class="dropdown-item" href="logout.php"><i class="fa fa-power-off"></i> Logout</a>
 					</ul>
 					<!-- /.dropdown-user -->
@@ -39,7 +39,7 @@ confirm_logged_in();
 			</li>
 			<li class="nav-item">
 				<a href="booking.php">
-					<i class="la la-table"></i>
+					<i class="la la-bar-chart"></i>
 					<p>Booking</p>
 					<?php
 					$bookingdatas 	= bookings::find_all();
@@ -50,7 +50,7 @@ confirm_logged_in();
 			</li>
 			<li class="nav-item">
 				<a href="rooms.php">
-					<i class="la la-table"></i>
+					<i class="la la-bed"></i>
 					<p>Rooms</p>
 					<?php
 					$roomsdatas 	= Rooms::find_all();

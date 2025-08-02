@@ -15,4 +15,4 @@
 </footer>
 
 <!-- Chatbot Widget -->
-<?php include 'include/chatbot_widget.php'; ?>
+<?php include 'include/chatbot_widget_simple.php'; ?>
