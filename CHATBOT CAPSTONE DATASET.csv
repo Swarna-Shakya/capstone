@@ -32,7 +32,7 @@ Do you offer discounts for long stays?,Please contact our reception to inquire a
 Do you have rooms available for tomorrow?,Let me check the availability. Could you please specify the room type and number of guests?
 Can I book a room for two nights?,"Yes, you can book a room for any duration. Please let me know your check-in and check-out dates."
 Can you suggest a room for four people?,The Family room is the best option as it has 2 double beds and enough space for four guests.
-Do you have honeymoon suites?,"We don’t have a specific honeymoon suite, but the Super Comfort room is great for couples."
+Do you have honeymoon suites?,"We don't have a specific honeymoon suite, but the Super Comfort room is great for couples."
 Can I get a bill for my stay?,"Yes, we provide detailed invoices for your stay."
 How do I request room cleaning?,You can schedule room cleaning by informing the reception or using the chatbot.
 Can you recommend some nearby tourist attractions?,"Yes! Some popular attractions near our hotel include Kathmandu Durbar Square, Dharahara, Narayanhiti Palace, Garden of Dreams, Hanuman Dhoka, Thamel."
@@ -211,7 +211,7 @@ Do you have connecting rooms?,"Yes, we offer connecting rooms for families."
 Is there a dress code for the restaurant?,Our restaurant has a casual dress code.
 Can I bring my own food into the hotel?,"No, you can't bring your own food."
 Do you offer high-speed internet?,"Yes, we provide high-speed Wi-Fi in all areas."
-Can I use the hotel’s phone for international calls?,"Yes, you can make international calls from your room."
+Can I use the hotel's phone for international calls?,"Yes, you can make international calls from your room."
 Are there quiet hours at the hotel?,"Yes, we observe quiet hours from 10 PM to 7 AM."
 Is there a nightclub or entertainment venue nearby?,"Yes, a nightclub is located within walking distance."
 Do you have security cameras in the hotel?,"Yes, we have security cameras throughout the hotel."
@@ -253,16 +253,16 @@ Can I request additional toiletries?,"Yes, extra toiletries can be requested at 
 Is drinking water available in the rooms?,Complimentary bottled water is provided daily in all rooms.
 Do you offer in-room dining services?,"Yes, we offer in-room dining 24/7."
 Is there a bar in the hotel?,"Yes, there is a bar that serves a variety of drinks."
-What are the restaurant’s operating hours?,The restaurant is open from 7 AM to 11 PM daily.
-Are kids’ meals available at the restaurant?,"Yes, kid-friendly meals are available."
-Do you have a coffee shop or café?,"Yes, we have a café offering coffee and light snacks."
+What are the restaurant's operating hours?,The restaurant is open from 7 AM to 11 PM daily.
+Are kids' meals available at the restaurant?,"Yes, kid-friendly meals are available."
+Do you have a coffee shop or caf'?,"Yes, we have a caf' offering coffee and light snacks."
 Are there any nearby hospitals or medical facilities?,"Yes, there are hospitals and clinics within a 10-minute drive."
 Is there a doctor-on-call service?,"Yes, we have a doctor-on-call service available."
 What safety measures are in place at the hotel?,"We have 24/7 security, fire alarms, and safety protocols in place."
 Do you have CCTV surveillance in common areas?,"Yes, common areas are monitored with CCTV cameras."
 Is there a fire evacuation plan in place?,Emergency exits and fire evacuation plans are clearly marked.
 Do you provide babysitting or childcare services?,Babysitting services can be arranged upon request.
-Are there any activities for children at the hotel?,"Yes, we have a kids’ play area and activities for children."
+Are there any activities for children at the hotel?,"Yes, we have a kids' play area and activities for children."
 Can I request an extra bed in my room?,"Yes, extra beds can be provided for an additional charge."
 Do you have family suites?,We offer family suites with extra space and bedding.
 Can I host a small event or meeting at the hotel?,"Yes, we have event spaces for small gatherings."
@@ -328,7 +328,7 @@ Can I change my booking dates later?,"Yes, you can adjust your booking dates if 
 Which room is the most affordable?,"The Duplex room is the most economical choice, priced at Rs 1500 per night."
 What is the most premium accommodation option?,"The Family room is the most high-end option, featuring two double beds and a balcony."
 Do all the rooms come with internet access?,"Yes, all of our rooms come with free high-speed WiFi."
-Are all rooms equipped with air conditioning?,"Yes, every room has air conditioning for guests’ comfort."
+Are all rooms equipped with air conditioning?,"Yes, every room has air conditioning for guests' comfort."
 Do all rooms have attached bathrooms?,"Yes, each room includes a private attached bathroom."
 Do your rooms have curtains that block out light?,"Yes, blackout curtains are installed in all rooms."
 Will my room have a refrigerator?,"Yes, a small refrigerator is available in every room."
@@ -350,7 +350,7 @@ Is it possible to book two rooms that are connected?,"Yes, adjoining rooms can b
 Is a deposit required to secure my booking?,"No deposit is necessary, except during peak seasons."
 Can I modify my reservation dates if needed?,"Yes, booking modifications are allowed, but it depends on availability."
 What is the cheapest room available?,Our budget-friendly Duplex room costs Rs 1500 per night.
-What’s the most luxurious room you offer?,The most premium option is the Family room with a private balcony.
+What's the most luxurious room you offer?,The most premium option is the Family room with a private balcony.
 Do all rooms come with free WiFi access?,"Yes, complimentary high-speed WiFi is available in all rooms."
 Are your rooms equipped with air conditioning?,Absolutely! Every room is equipped with an air conditioning unit.
 Do the rooms have private bathrooms?,"Yes, all our rooms feature attached private bathrooms."
@@ -377,13 +377,13 @@ Is there an option for a late check-out?,"Yes, we offer late check-out options, 
 How can I book a room at your hotel?,"You can reserve a room via our website, travel agencies, or by calling the reception."
 What payment methods are accepted at the hotel?,"We accept credit/debit cards, online payments, and cash."
 Do I need to pay the full amount upfront when booking?,"Prepayment is required for some reservations, while others can be paid at check-in."
-Do you have a honeymoon suite?,"We don’t have a honeymoon suite, but the Super Comfort room is great for couples."
+Do you have a honeymoon suite?,"We don't have a honeymoon suite, but the Super Comfort room is great for couples."
 Is there a romantic room for couples?,"No specific honeymoon suite, but our Super Comfort room is perfect for two."
-What’s your best room for newlyweds?,Try our Super Comfort room—it’s ideal for couples.
+What's your best room for newlyweds?,Try our Super Comfort room'it's ideal for couples.
 Can I get a bill for my stay?,"Yes, we provide invoices at check-out."
-Do you provide invoices?,You’ll get a bill when you check out.
+Do you provide invoices?,You'll get a bill when you check out.
 How can I get a receipt?,"Yes, just ask at reception for an invoice."
-How do I request room cleaning?,"Inform reception, and we’ll schedule it."
+How do I request room cleaning?,"Inform reception, and we'll schedule it."
 Can I schedule housekeeping?,Just let the front desk know.
 How do I ask for a room cleanup?,Call reception to request a cleanup.
 What are some nearby attractions?,Kathmandu Durbar Square and Thamel are close by.
@@ -391,28 +391,28 @@ Any tourist spots close by?,Try the Garden of Dreams or Narayanhiti Palace.
 What places should I visit nearby?,Dharahara and Hanuman Dhoka are nearby.
 How do I book a room?,You can book online through our hotel website.
 Can I reserve a room online?,Visit our website and select your check-in and check-out dates.
-What’s the process for booking a stay?,Room reservations can be made online via our booking portal.
+What's the process for booking a stay?,Room reservations can be made online via our booking portal.
 Where is your hotel located?,"We are located in Dhobidhara, Kathmandu."
-What’s your hotel’s address?,"Our hotel is situated at Dhobidhara, Kathmandu."
-Can you share the location details?,"You’ll find us in Dhobidhara, Kathmandu."
+What's your hotel's address?,"Our hotel is situated at Dhobidhara, Kathmandu."
+Can you share the location details?,"You'll find us in Dhobidhara, Kathmandu."
 What room options do you offer?,"We have Duplex, Family, and Super Comfort rooms."
 What types of accommodations are available?,"Our hotel offers three room types: Duplex, Family, and Super Comfort."
 Do you have different room categories?,"You can choose from Duplex, Family, or Super Comfort rooms."
 Tell me about the Duplex room.,"The Duplex room has two single beds, AC, TV, and WiFi."
-What’s included in the Duplex room?,It’s a budget-friendly room with twin beds and basic amenities.
+What's included in the Duplex room?,It's a budget-friendly room with twin beds and basic amenities.
 Can you describe the Duplex room?,"Our Duplex room comes with AC, TV, and two single beds."
-How do I make a reservation?,You can book a room through our hotel’s website.
-What’s the procedure for booking a room?,Simply visit our online reservation page to book your stay.
+How do I make a reservation?,You can book a room through our hotel's website.
+What's the procedure for booking a room?,Simply visit our online reservation page to book your stay.
 Can I book a room online?,"Yes, you can book online by selecting your check-in and check-out dates."
 Where can I book a room?,Room bookings can be made through our website or at the front desk.
 Is there an online booking option?,Online reservations are available on our official website.
 How can I secure a room at your hotel?,"Just visit our website, pick your dates, and confirm your booking."
 Where is your hotel located?,"Our hotel is in Dhobidhara, Kathmandu."
-What’s your address?,"You’ll find us at Dhobidhara, Kathmandu."
+What's your address?,"You'll find us at Dhobidhara, Kathmandu."
 Where can I find your hotel?,"We are based in Dhobidhara, in the heart of Kathmandu."
 Could you share the location details?,"The hotel is situated in Dhobidhara, Kathmandu."
-What’s the exact location of the hotel?,"Our exact location is Dhobidhara, Kathmandu."
-Where in Kathmandu is your hotel?,"We’re centrally located in Dhobidhara, Kathmandu."
+What's the exact location of the hotel?,"Our exact location is Dhobidhara, Kathmandu."
+Where in Kathmandu is your hotel?,"We're centrally located in Dhobidhara, Kathmandu."
 What types of rooms do you offer?,"We have Duplex, Family, and Super Comfort rooms."
 What are the different room categories?,"Our hotel offers three room categories: Duplex, Family, and Super Comfort."
 Can you tell me about your room choices?,"You can choose from Duplex, Family, or Super Comfort rooms."
@@ -420,67 +420,67 @@ What kinds of rooms are available?,"We provide three types of accommodations: Du
 Do you have different room types?,"We have rooms suitable for individuals, couples, and families."
 What accommodation options do you have?,"Our options include budget-friendly, family-friendly, and luxury rooms."
 Can you describe the Duplex room?,"The Duplex room has two single beds, AC, TV, and WiFi."
-What does the Duplex room include?,It’s a cozy room with twin beds and modern amenities.
+What does the Duplex room include?,It's a cozy room with twin beds and modern amenities.
 Tell me more about the Duplex room.,"Our Duplex room is designed for two guests, offering AC, TV, and WiFi."
 What are the features of the Duplex room?,"It features two single beds, air conditioning, and a flat-screen TV."
 How is the Duplex room set up?,The Duplex room is an affordable option with basic facilities.
-What’s inside the Duplex room?,"This room comes with two beds, a private bathroom, and free WiFi."
+What's inside the Duplex room?,"This room comes with two beds, a private bathroom, and free WiFi."
 What facilities does the Family room have?,"The Family room has two double beds, AC, a sofa, TV, and WiFi."
-Can you describe the Family room?,"It’s a spacious room with a balcony, seating area, and modern facilities."
-What’s included in the Family room?,The Family room is designed for comfort with extra space and amenities.
+Can you describe the Family room?,"It's a spacious room with a balcony, seating area, and modern facilities."
+What's included in the Family room?,The Family room is designed for comfort with extra space and amenities.
 What features does the Family room offer?,"It features two queen-sized beds, a sofa, and a private balcony."
 How big is the Family room?,"This room is great for families, offering enough space and comfort."
-What makes the Family room suitable for families?,"It’s our largest room, perfect for four guests."
+What makes the Family room suitable for families?,"It's our largest room, perfect for four guests."
 How much does the Super Comfort room cost?,"It costs Rs 2200 per night and includes a double bed, AC, TV, and WiFi."
-What’s special about the Super Comfort room?,The Super Comfort room is designed for extra relaxation and space.
+What's special about the Super Comfort room?,The Super Comfort room is designed for extra relaxation and space.
 What amenities does the Super Comfort room offer?,"It comes with a queen-sized bed, air conditioning, and a work desk."
 Can you tell me about the Super Comfort room?,This room includes premium amenities for a comfortable stay.
-Is the Super Comfort room luxurious?,It’s a great choice for couples looking for extra comfort.
-What’s inside the Super Comfort room?,"The room features a bathtub, soft bedding, and blackout curtains."
+Is the Super Comfort room luxurious?,It's a great choice for couples looking for extra comfort.
+What's inside the Super Comfort room?,"The room features a bathtub, soft bedding, and blackout curtains."
 Which room is the most budget-friendly?,The Duplex room is the cheapest at Rs 1500 per night.
-What’s the cheapest room option?,Our most budget-friendly option is the Duplex room.
+What's the cheapest room option?,Our most budget-friendly option is the Duplex room.
 Do you have any low-cost rooms?,"Yes, the Duplex room is our most affordable accommodation."
-What’s your most affordable room?,"If you’re looking for a budget stay, the Duplex room is ideal."
+What's your most affordable room?,"If you're looking for a budget stay, the Duplex room is ideal."
 Is there a budget room available?,The lowest-priced room is the Duplex room.
 Which room is the least expensive?,"At Rs 1500, the Duplex room is the most economical option."
 Do you have rooms available for tomorrow?,Let me check the availability for your requested dates.
-Can I get a room for next weekend?,Availability depends on the date and room type—let me check.
+Can I get a room for next weekend?,Availability depends on the date and room type'let me check.
 Are there any rooms open for a last-minute stay?,Last-minute bookings are possible if we have open rooms.
 Can I check if there are rooms available?,You can check availability on our website or contact reception.
 How do I find out about availability?,Feel free to ask our front desk for the latest availability.
-Do you have vacant rooms right now?,Rooms are subject to availability—let me confirm for you.
+Do you have vacant rooms right now?,Rooms are subject to availability'let me confirm for you.
 Can I book a room for one night only?,"Yes, you can book for just one night."
 Is it possible to stay just for a night?,We accept bookings for even a single night.
-Do you allow single-night bookings?,There’s no minimum stay requirement—you can stay one night.
+Do you allow single-night bookings?,There's no minimum stay requirement'you can stay one night.
 Can I reserve a room for just one night?,"Absolutely, our rooms are available for short stays."
-What’s the minimum stay requirement?,One-night stays are allowed at our hotel.
-Do I have to book for more than one night?,"No, there’s no minimum stay—you can book for one night or more."
+What's the minimum stay requirement?,One-night stays are allowed at our hotel.
+Do I have to book for more than one night?,"No, there's no minimum stay'you can book for one night or more."
 Can I book a Family room for two people?,"Yes, but the room is best for families as it has two double beds."
-Is the Family room suitable for just two guests?,"The Family room is spacious, so it’s great even for two guests."
+Is the Family room suitable for just two guests?,"The Family room is spacious, so it's great even for two guests."
 Can a couple stay in the Family room?,Couples can book the Family room if they prefer extra space.
-Is the Family room only for families?,"It’s ideal for families, but anyone can book it."
+Is the Family room only for families?,"It's ideal for families, but anyone can book it."
 Can I book a bigger room even if we are fewer guests?,"Yes, you can book any room regardless of the number of guests."
-Do I need to have four people to book the Family room?,"No, the Family room can be booked even if you’re fewer than four."
+Do I need to have four people to book the Family room?,"No, the Family room can be booked even if you're fewer than four."
 What room categories do you have?,"We have Duplex, Family, and Super Comfort rooms."
 Can you list the different types of rooms available?,"Our rooms include budget, family-friendly, and premium options."
 Do you have rooms for solo travelers?,"Yes, the Duplex room is great for solo travelers."
-What’s the difference between your room types?,"The main differences are size, amenities, and price."
+What's the difference between your room types?,"The main differences are size, amenities, and price."
 Which room is best for families?,The Family room is ideal for families.
-Do you offer luxury suites?,"No, we don’t have suites, but our Super Comfort room offers premium features."
+Do you offer luxury suites?,"No, we don't have suites, but our Super Comfort room offers premium features."
 What are the amenities in the Duplex room?,"It comes with two single beds, AC, TV, and WiFi."
 How many people can stay in a Duplex room?,The Duplex room is suitable for two guests.
-Is the Duplex room a good choice for budget travelers?,"Yes, it’s our most budget-friendly option."
-What makes the Duplex room special?,"It’s a compact, affordable room with essential amenities."
+Is the Duplex room a good choice for budget travelers?,"Yes, it's our most budget-friendly option."
+What makes the Duplex room special?,"It's a compact, affordable room with essential amenities."
 Does the Duplex room have a private bathroom?,"Yes, all our rooms have private bathrooms."
 Is breakfast included with the Duplex room?,Breakfast is not included but can be added for an extra charge.
 How many beds are in the Family room?,It has two double beds.
 Does the Family room have a balcony?,"Yes, the Family room comes with a balcony."
-Is the Family room spacious?,"Yes, it’s the most spacious room we offer."
-Can I book a Family room for just two people?,"Yes, but it’s designed for four people."
-Is the Family room child-friendly?,"Yes, it’s perfect for families with children."
+Is the Family room spacious?,"Yes, it's the most spacious room we offer."
+Can I book a Family room for just two people?,"Yes, but it's designed for four people."
+Is the Family room child-friendly?,"Yes, it's perfect for families with children."
 Does the Family room have a bathtub?,"No, but it has a well-equipped bathroom."
-What makes the Super Comfort room different?,It’s a premium room with extra comfort and space.
-Is the Super Comfort room a good option for couples?,"Yes, it’s perfect for couples looking for a cozy stay."
+What makes the Super Comfort room different?,It's a premium room with extra comfort and space.
+Is the Super Comfort room a good option for couples?,"Yes, it's perfect for couples looking for a cozy stay."
 Does this room include a work desk?,"Yes, it includes a small workspace."
 Can I get an extra bed in this room?,Extra beds can be arranged for an additional fee.
 Is the Super Comfort room worth the price?,"Yes, it offers great value for the price."
@@ -490,13 +490,13 @@ What room should I book for a honeymoon?,The Super Comfort room is a great choic
 Do you have interconnected rooms for families?,"Yes, we offer interconnected rooms upon request."
 Which room has the best view?,The Family room with a balcony offers the best view.
 Are all your rooms non-smoking?,"Yes, all our rooms are non-smoking."
-What’s included in the Super Comfort room?,"It includes a double bed, AC, TV, WiFi, and more."
+What's included in the Super Comfort room?,"It includes a double bed, AC, TV, WiFi, and more."
 Is there a private balcony in the Super Comfort room?,"No, the balcony is only available in the Family room."
-How comfortable is the Super Comfort room?,It’s our most comfortable option for a relaxing stay.
+How comfortable is the Super Comfort room?,It's our most comfortable option for a relaxing stay.
 Does this room come with complimentary breakfast?,Breakfast is available for an additional charge.
 Can I request late check-out for the Super Comfort room?,"Yes, late check-out is possible based on availability."
 Is this room wheelchair accessible?,Please contact us to confirm accessibility options.
-What’s the easiest way to get to your hotel?,"You can take a taxi, bus, or private car."
+What's the easiest way to get to your hotel?,"You can take a taxi, bus, or private car."
 Do you provide pick-up services from the airport?,"Yes, we offer airport pick-up services upon request."
 Is your hotel close to major attractions?,"Yes, popular attractions are nearby."
 Are there public transport options near your hotel?,"Yes, buses and taxis are available close to our hotel."
@@ -504,32 +504,32 @@ Do you have parking for guests?,"Yes, we offer free parking for guests."
 Do you have rooms that can accommodate five people?,"Our Family room fits four, but extra beds can be arranged."
 Is there a way to book two rooms side by side?,"Yes, we can arrange adjacent rooms if available."
 Can we get extra bedding for children?,"Yes, we provide extra bedding for children."
-What’s the most comfortable room for a large family?,The Family room is the best choice for larger groups.
+What's the most comfortable room for a large family?,The Family room is the best choice for larger groups.
 Do you offer group discounts?,"Yes, we offer discounts for group bookings."
 Can I add another guest to my booking after check-in?,"Yes, but additional charges may apply."
 Is booking a room in advance necessary?,"Booking in advance is recommended, especially during peak seasons."
 Can I reserve a room via phone or email?,"Yes, you can book via phone or email."
 Do I need to provide any documents while booking?,You might need an ID or passport during check-in.
 Can I cancel or modify my booking later?,"Yes, cancellation and modification policies apply."
-Is it possible to reserve a room without paying upfront?,"Some bookings require advance payment, while others don’t."
+Is it possible to reserve a room without paying upfront?,"Some bookings require advance payment, while others don't."
 What types of rooms do you offer?,"We offer 3 different rooms which are Super comfort, Duplex and family."
 Which is the most budget-friendly room?,The most budget friendly room is our Duplex room?
 What are the prices of rooms?,"We offer 3 different rooms which are Super comfort, Duplex and family.Which room prices would you want to know?"
 what is the price of of duplex room?,The price of duplex room is Rs.1500 per night?
 what is the price of of Super comfort room?,The price of Super comfort room is Rs.2200 per night?
 what is the price of of Family room?,The price of Family room is Rs.3500 per night?
-What rooms are available?,We have three types of rooms available: Duplex (budget-friendly for 2 guests), Family (spacious for up to 4 guests), and Super Comfort (premium room for couples).
-What kind of rooms do you have available?,Our hotel offers three room types: Duplex rooms (Rs.1500/night), Family rooms (Rs.3500/night), and Super Comfort rooms (Rs.2200/night). Each offers different amenities and space.
-Can you tell me about all your room options?,We offer three room categories: Duplex (budget option with twin beds), Family (larger room with two double beds and balcony), and Super Comfort (premium room with queen bed and extra amenities).
-What are all the room types you offer?,We have Duplex rooms (budget-friendly), Family rooms (spacious), and Super Comfort rooms (premium). Each offers different amenities and comfort levels to suit your needs.
-Show me all available rooms,Our hotel features Duplex rooms (for 2 guests), Family rooms (for up to 4 guests), and Super Comfort rooms (for 2 guests with premium amenities).
-What accommodations do you have?,We provide three types of accommodations: Duplex rooms (basic), Family rooms (spacious), and Super Comfort rooms (premium).
-List all your room types,Our room types include: Duplex (Rs.1500/night), Family (Rs.3500/night), and Super Comfort (Rs.2200/night).
-I need to know what rooms you have,We offer three room categories: Duplex (budget-friendly twin beds), Family (spacious with two double beds), and Super Comfort (premium with queen bed).
-What are my room options?,You can choose from Duplex rooms (budget option), Family rooms (larger space), or Super Comfort rooms (premium amenities).
-Tell me about all the rooms in your hotel,Our hotel features three room types: Duplex (affordable with basic amenities), Family (spacious with balcony), and Super Comfort (premium with extra comfort features).
-Do you have different types of rooms?,Yes, we have three different types: Duplex rooms for budget travelers, Family rooms for groups or families, and Super Comfort rooms for those seeking premium amenities.
-What are the different categories of rooms?,We categorize our rooms as Duplex (budget), Family (spacious), and Super Comfort (premium).
-I want to know about all room categories,We offer Duplex rooms (Rs.1500/night), Family rooms (Rs.3500/night), and Super Comfort rooms (Rs.2200/night), each with different amenities and space.
-What rooms can I book?,You can book any of our three room types: Duplex (for 2 guests), Family (for up to 4 guests), or Super Comfort (premium for 2 guests).
-Tell me about your room selection,Our room selection includes Duplex rooms (twin beds, basic amenities), Family rooms (two double beds, balcony), and Super Comfort rooms (queen bed, premium features).
+What rooms are available?,"We have three types of rooms available: Duplex (budget-friendly for 2 guests), Family (spacious for up to 4 guests), and Super Comfort (premium room for couples)."
+What kind of rooms do you have available?,"Our hotel offers three room types: Duplex rooms (Rs.1500/night), Family rooms (Rs.3500/night), and Super Comfort rooms (Rs.2200/night). Each offers different amenities and space."
+Can you tell me about all your room options?,"We offer three room categories: Duplex (budget option with twin beds), Family (larger room with two double beds and balcony), and Super Comfort (premium room with queen bed and extra amenities)."
+What are all the room types you offer?,"We have Duplex rooms (budget-friendly), Family rooms (spacious), and Super Comfort rooms (premium). Each offers different amenities and comfort levels to suit your needs."
+Show me all available rooms,"Our hotel features Duplex rooms (for 2 guests), Family rooms (for up to 4 guests), and Super Comfort rooms (for 2 guests with premium amenities)."
+What accommodations do you have?,"We provide three types of accommodations: Duplex rooms (basic), Family rooms (spacious), and Super Comfort rooms (premium)."
+List all your room types,"Our room types include: Duplex (Rs.1500/night), Family (Rs.3500/night), and Super Comfort (Rs.2200/night)."
+I need to know what rooms you have,"We offer three room categories: Duplex (budget-friendly twin beds), Family (spacious with two double beds), and Super Comfort (premium with queen bed)."
+What are my room options?,"You can choose from Duplex rooms (budget option), Family rooms (larger space), or Super Comfort rooms (premium amenities)."
+Tell me about all the rooms in your hotel,"Our hotel features three room types: Duplex (affordable with basic amenities), Family (spacious with balcony), and Super Comfort (premium with extra comfort features)."
+Do you have different types of rooms?,"Yes, we have three different types: Duplex rooms for budget travelers, Family rooms for groups or families, and Super Comfort rooms for those seeking premium amenities."
+What are the different categories of rooms?,"We categorize our rooms as Duplex (budget), Family (spacious), and Super Comfort (premium)."
+I want to know about all room categories,"We offer Duplex rooms (Rs.1500/night), Family rooms (Rs.3500/night), and Super Comfort rooms (Rs.2200/night), each with different amenities and space."
+What rooms can I book?,"You can book any of our three room types: Duplex (for 2 guests), Family (for up to 4 guests), or Super Comfort (premium for 2 guests)."
+Tell me about your room selection,"Our room selection includes Duplex rooms (twin beds, basic amenities), Family rooms (two double beds, balcony), and Super Comfort rooms (queen bed, premium features)."

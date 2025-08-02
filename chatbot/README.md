@@ -149,3 +149,7 @@ If the chatbot is not responding:
 1. Make sure the Flask server is running
 2. Check that the API URL in the chatbot.php and chatbot_widget.php files is correct
 3. Look for any error messages in the Flask server console
+
+## Conclusion
+
+Our AI-powered chatbot represents a significant enhancement to the hotel website's customer service capabilities. By automating responses to common inquiries, we improve user experience while reducing the workload on human staff. The implementation demonstrates practical application of AI techniques in a real-world hospitality context.
