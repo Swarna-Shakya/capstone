@@ -231,6 +231,7 @@ $admin_name = $_SESSION['loginUser'] ?? 'Admin';
 			background-color: #f8fafc;
 			color: #444444ff;
 			border-top: 1px solid #e5e7eb;
+			text-align: center;
 		}
 
 
@@ -253,7 +254,6 @@ $admin_name = $_SESSION['loginUser'] ?? 'Admin';
 						<img src="../images/logo.png" alt="Logo" style="height: 40px; margin-right: 12px;">
 						<h4 class="page-title m-0">Admin Panel</h4>
 					</div>
-
 
 					<!-- Welcome card -->
 					<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -319,11 +319,7 @@ $admin_name = $_SESSION['loginUser'] ?? 'Admin';
 			</div> <!-- /.content -->
 
 			<footer class="footer">
-				<div class="container-fluid">
-					<div class="copyright ml-auto">
-						© 2025 All Rights Reserved. Developed by Capstone.in
-					</div>
-				</div>
+				© 2025 All Rights Reserved. Developed by Capstone.in
 			</footer>
 		</div> <!-- /.main-panel -->
 	</div> <!-- /.wrapper -->

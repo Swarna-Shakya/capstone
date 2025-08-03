@@ -35,16 +35,14 @@ require_once '../include/initialize.php';
 			flex-direction: column;
 			min-height: 100vh;
 		}
-.main-panel {
-    margin-left: 250px;
-    /* Remove flex properties and min-height */
-    background-color: #f8fafc;
-    /* Let it be a normal block container */
-}
 
+		.main-panel {
+			margin-left: 250px;
+			/* Remove flex properties and min-height */
+			background-color: #f8fafc;
+			/* Let it be a normal block container */
+		}
 
-
-	
 		.page-title {
 			color: #1e293b;
 			font-weight: 700;
@@ -204,13 +202,14 @@ require_once '../include/initialize.php';
 			border: none;
 		}
 
-.footer {
-    padding: 1rem 2rem;
-    background-color: #f8fafc;
-    color: #444444ff;
-    border-top: 1px solid #e5e7eb;
-    /* Just a normal footer - no special positioning */
-}
+		.footer {
+			padding: 1rem 2rem;
+			background-color: #f8fafc;
+			color: #444444ff;
+			border-top: 1px solid #e5e7eb;
+			text-align: center;
+			/* Just a normal footer - no special positioning */
+		}
 	</style>
 
 </head>
@@ -269,16 +268,12 @@ require_once '../include/initialize.php';
 					</div>
 				</div>
 			</div>
-<footer class="footer">
-				<div class="container-fluid">
-					<div class="copyright ml-auto">
-						© 2025 All Rights Reserved. Developed by Capstone.in
-					</div>
-				</div>
+			<footer class="footer">
+				© 2025 All Rights Reserved. Developed by Capstone.in
 			</footer>
-			
+
 		</div>
-		
+
 	</div>
 </body>
 

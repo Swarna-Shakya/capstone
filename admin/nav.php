@@ -31,16 +31,21 @@ confirm_logged_in();
 	</nav>
 </div>
 
+<?php
+// to add active class to the current page
+$current_page = basename($_SERVER['PHP_SELF'], ".php");
+?>
+
 <div class="sidebar">
 	<div class="scrollbar-inner sidebar-wrapper">
 		<ul class="nav">
-			<li class="nav-item active">
+			<li class="nav-item <?php echo ($current_page == 'index') ? 'active' : ''; ?>">
 				<a href="index.php">
 					<i class="la la-dashboard"></i>
 					<p>Dashboard</p>
 				</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item <?php echo ($current_page == 'booking') ? 'active' : ''; ?>">
 				<a href="booking.php">
 					<i class="la la-bar-chart"></i>
 					<p>Booking</p>
@@ -48,10 +53,10 @@ confirm_logged_in();
 					$bookingdatas 	= bookings::find_all();
 					$countbooking 	= count($bookingdatas, 0);
 					?>
-					<span class="badge badge-count badge-success"><?php echo  $countbooking; ?></span>
+					<span class="badge badge-count badge-success"><?php echo $countbooking; ?></span>
 				</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item <?php echo ($current_page == 'rooms' || $current_page == 'roomedit') ? 'active' : ''; ?>">
 				<a href="rooms.php">
 					<i class="la la-bed"></i>
 					<p>Rooms</p>
@@ -59,7 +64,7 @@ confirm_logged_in();
 					$roomsdatas 	= Rooms::find_all();
 					$countroom 		= count($roomsdatas, 0);
 					?>
-					<span class="badge badge-count badge-success"><?php echo  $countroom; ?></span>
+					<span class="badge badge-count badge-success"><?php echo $countroom; ?></span>
 				</a>
 			</li>
 		</ul>
