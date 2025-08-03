@@ -19,6 +19,227 @@ $admin_name = $_SESSION['loginUser'] ?? 'Admin';
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900">
 	<link rel="stylesheet" href="assets/css/ready.css">
 	<link rel="stylesheet" href="assets/css/demo.css">
+
+	<style>
+		body {
+			background-color: #f8fafc;
+			font-family: 'Nunito', sans-serif;
+			color: #1e293b;
+		}
+
+		.main-panel {
+			background-color: #f8fafc;
+		}
+
+		.page-title {
+			color: #1e293b;
+			font-weight: 700;
+		}
+
+		.card {
+			background-color: #ffffff;
+			border-radius: 1rem;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+			border: 1px solid #e5e7eb;
+		}
+
+		.card .card-category {
+			font-size: 0.75rem;
+			font-weight: 600;
+			color: #6b7280;
+			margin-bottom: 4px;
+		}
+
+		.card .card-title {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: #1e293b;
+		}
+
+		.card-stats.card-success {
+			background-color: #c7d2fe;
+			/* Booking - Indigo 200 */
+			color: #1e3a8a;
+			/* Indigo 900 text */
+			border: 1px solid #a5b4fc;
+		}
+
+		.card-stats.card-primary {
+			background-color: #bfdbfe;
+			/* Rooms - Blue 200 */
+			color: #1e40af;
+			/* Blue 900 text */
+			border: 1px solid #93c5fd;
+		}
+
+		.card-stats .icon-big i {
+			color: #4338ca;
+			/* Bookings icon */
+		}
+
+		.card-stats.card-primary .icon-big i {
+			color: #2563eb;
+			/* Rooms icon */
+		}
+
+		.card-stats:hover {
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			transform: translateY(-2px);
+			transition: all 0.2s ease-in-out;
+		}
+
+
+		.icon-big i {
+			font-size: 2rem;
+			color: #3b82f6;
+		}
+
+		.alert-success {
+			background-color: #e0f2fe;
+			/* light blue background */
+			color: #0369a1;
+			/* strong blue text */
+			border: 1px solid #bae6fd;
+			/* soft border */
+			font-weight: 500;
+			border-radius: 0.75rem;
+			padding: 1rem 1.5rem;
+			position: relative;
+			/* needed for absolute positioning of close */
+			padding-right: 3rem;
+			/* space for close button */
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.alert-success strong {
+			color: #0c4a6e;
+		}
+
+		.alert .close span {
+			color: #0369a1 !important;
+			font-size: 1.25rem;
+			line-height: 1;
+		}
+
+		.alert .close {
+			background: transparent;
+			border: none;
+			outline: none;
+		}
+
+		/* Sidebar dark theme (optional if nav.php has sidebar) */
+		.sidebar,
+		.sidebar-wrapper {
+			background-color: #0f172a;
+		}
+
+		.sidebar .nav-item a {
+			color: #9ca3af;
+		}
+
+		.sidebar .nav-item.active a {
+			color: #ffffff;
+			background-color: #1e293b;
+			border-radius: 0.5rem;
+		}
+
+		.sidebar .logo {
+			color: #ffffff;
+		}
+
+		.page-header {
+			/* Optional styling */
+			margin-bottom: 20px;
+		}
+
+		.page-header img {
+			border-radius: 6px;
+			/* optional rounded corners */
+			object-fit: contain;
+		}
+
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		.logo-header {
+			border-bottom: none !important;
+			margin: 0;
+			padding: 0 20px;
+			background-color: #0f172a;
+			/* or match your theme */
+		}
+
+		.badge-count {
+			font-size: 0.75rem;
+			/* smaller text */
+			font-weight: 700;
+			/* bold */
+			padding: 0.25rem 0.6rem;
+			/* vertical and horizontal padding */
+			border-radius: 1rem;
+			/* pill shape */
+			min-width: 24px;
+			text-align: center;
+			display: inline-block;
+		}
+
+		/* Change green background to a different shade or color */
+		.badge-success {
+			background-color: #10b981;
+			/* Tailwind emerald-500, for example */
+			color: white;
+			box-shadow: 0 0 5px #10b981aa;
+			/* subtle glow */
+		}
+
+		/* Optional: add hover effect */
+		.nav-item:hover .badge-count {
+			background-color: #059669;
+			/* slightly darker on hover */
+			box-shadow: 0 0 8px #059669cc;
+			transition: background-color 0.3s ease, box-shadow 0.3s ease;
+		}
+
+		.main-header {
+			border: none;
+		}
+
+
+		.wrapper {
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+		}
+
+		.main-panel {
+			margin-left: 250px;
+			/* or the actual width of your sidebar */
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.footer {
+			padding: 1rem 2rem;
+			background-color: #f8fafc;
+			color: #444444ff;
+			border-top: 1px solid #e5e7eb;
+		}
+
+
+		.content {
+			flex: 1;
+			/* ensures content area takes space and pushes footer down */
+		}
+	</style>
+
 </head>
 
 <body>
@@ -28,12 +249,16 @@ $admin_name = $_SESSION['loginUser'] ?? 'Admin';
 		<div class="main-panel">
 			<div class="content">
 				<div class="container-fluid">
-					<h4 class="page-title">Dashboard</h4>
+					<div class="page-header d-flex align-items-center">
+						<img src="../images/logo.png" alt="Logo" style="height: 40px; margin-right: 12px;">
+						<h4 class="page-title m-0">Admin Panel</h4>
+					</div>
+
 
 					<!-- Welcome card -->
 					<div class="alert alert-success alert-dismissible fade show" role="alert">
 						<strong>Welcome back, <?= $admin_name ?>!</strong> Here's a quick overview of your hotel system.
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="right: 10px;"	>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close" style="right: 10px;">
 							<span aria-hidden="true" style="position: absolute; top: 0px; right: 12px; color: black;">&times;</span>
 						</button>
 					</div>
@@ -120,4 +345,5 @@ $admin_name = $_SESSION['loginUser'] ?? 'Admin';
 	<script src="assets/js/demo.js"></script>
 
 </body>
+
 </html>
