@@ -41,17 +41,18 @@ if (!empty($roomId)) {
 			color: #1e293b;
 		}
 
-			.wrapper {
+		.wrapper {
 			display: flex;
 			flex-direction: column;
 			min-height: 100vh;
 		}
-.main-panel {
-    margin-left: 250px;
-    /* Remove flex properties and min-height */
-    background-color: #f8fafc;
-    /* Let it be a normal block container */
-}
+
+		.main-panel {
+			margin-left: 250px;
+			/* Remove flex properties and min-height */
+			background-color: #f8fafc;
+			/* Let it be a normal block container */
+		}
 
 
 		.content {
@@ -219,13 +220,13 @@ if (!empty($roomId)) {
 		}
 
 		.footer {
-    padding: 1rem 2rem;
-    background-color: #f8fafc;
-    color: #444444ff;
-    border-top: 1px solid #e5e7eb;
-    /* Just a normal footer - no special positioning */
-}
-		
+			padding: 1rem 2rem;
+			background-color: #f8fafc;
+			color: #444444ff;
+			border-top: 1px solid #e5e7eb;
+			text-align: center;
+			/* Just a normal footer - no special positioning */
+		}
 	</style>
 </head>
 
@@ -305,11 +306,7 @@ if (!empty($roomId)) {
 				</div>
 			</div>
 			<footer class="footer">
-				<div class="container-fluid">
-					<div class="copyright ml-auto">
-						© 2025 All Rights Reserved. Developed by Capstone.in
-					</div>
-				</div>
+				© 2025 All Rights Reserved. Developed by Capstone.in
 			</footer>
 		</div>
 	</div>
