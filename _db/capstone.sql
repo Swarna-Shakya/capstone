@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2025 at 10:36 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Generation Time: Aug 03, 2025 at 10:37 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,25 +41,6 @@ CREATE TABLE `bookings` (
   `created_at` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `bookings`
---
-
-INSERT INTO `bookings` (`id`, `room_id`, `room_title`, `check_in`, `check_out`, `name`, `phone`, `email`, `message`, `book`, `created_at`) VALUES
-(1, 3, 'Super Comfort', '2025-04-07', '2025-04-08', 'SMS', '9849482482', 'swarna@longtail.info', 'booking', 'true', '2025-04-04 18:46:35'),
-(2, 3, 'Super Comfort', '2025-04-07', '2025-04-08', 'SMS', '9849482482', 'swarna@longtail.info', 'booking', 'true', '2025-04-04 18:48:41'),
-(3, 3, 'Super Comfort', '2025-04-07', '2025-04-08', 'SMS', '9849482482', 'swarna@longtail.info', 'booking', 'true', '2025-04-04 18:49:00'),
-(4, 2, 'Family', '2025-04-15', '2025-04-16', 'SMS', '9849482482', 'swarna@longtail.info', 'wesdf', 'true', '2025-04-04 18:51:35'),
-(5, 3, 'Super Comfort', '2025-04-14', '2025-04-15', 'Evengila Shakya Tuladhar', '9818514326', '7evanzelina@gmail.com', 'this is test booking', 'true', '2025-04-05 08:26:47'),
-(6, 3, 'Super Comfort', '2025-04-07', '2025-04-08', 'Evengila Tuladhar', '9818514326', '7evanzelina@gmail.com', 'sfgd', 'true', '2025-04-05 09:53:16'),
-(7, 3, 'Super Comfort', '2025-04-09', '2025-04-10', 'Eve', '9818514326', '7evanzelina@gmail.com', 'cds', 'true', '2025-04-06 19:11:22'),
-(8, 3, 'Super Comfort', '2025-04-17', '2025-04-18', 'Evengila Tuladhar', '9818514326', '7evanzelina@gmail.com', 'Eve', 'true', '2025-04-06 20:19:25'),
-(9, 3, 'Super Comfort', '2025-04-15', '2025-04-16', 'Evengila Tuladhar', '9818514326', '7evanzelina@gmail.com', 'eve', 'true', '2025-04-06 21:25:15'),
-(10, 3, 'Super Comfort', '2025-04-08', '2025-04-09', 'Evengila Tuladhar', '9818514326', '7evanzelina@gmail.com', 'Test', 'true', '2025-04-07 02:55:45'),
-(11, 3, 'Super Comfort', '2025-04-08', '2025-04-09', 'Eve', '9818514326', '7evanzelina@gmail.com', 'Prep', 'true', '2025-04-07 04:13:41'),
-(12, 3, 'Super Comfort', '2025-04-08', '2025-04-09', 'Eve', '9818514326', '7evanzelina@gmail.com', 'test', 'true', '2025-04-07 05:49:46'),
-(13, 3, 'Super Comfort', '2025-05-26', '2025-05-27', 'Even', '9818514326', '7evanzelina@gmail.com', 'mail issue', 'true', '2025-05-26 03:24:08');
-
 -- --------------------------------------------------------
 
 --
@@ -70,8 +51,6 @@ CREATE TABLE `rooms` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `room_qnty` int(11) NOT NULL,
-  `available` int(11) NOT NULL,
-  `booked` int(11) NOT NULL DEFAULT 0,
   `beds` int(11) NOT NULL,
   `bed_type` varchar(255) NOT NULL,
   `content` text NOT NULL,
@@ -86,10 +65,10 @@ CREATE TABLE `rooms` (
 -- Dumping data for table `rooms`
 --
 
-INSERT INTO `rooms` (`id`, `title`, `room_qnty`, `available`, `booked`, `beds`, `bed_type`, `content`, `currency`, `price`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Duplex', 5, 5, 0, 2, 'single', 'very cozy room comes with AC, TV, Wifi', 'NPR', 1500, 'room1.jpg', '', ''),
-(2, 'Family', 5, 5, 0, 5, 'double', 'very nice room comes with Sofa, TV, WIFI, Balcony, AC.', 'NPR', 3500, 'room2.jpg', '', ''),
-(3, 'Super Comfort', 10, 10, 0, 2, 'double', 'very comfortable room comes with AC, TV, WIFI, room service', 'NPR', 2200, 'room3.jpg', '', '');
+INSERT INTO `rooms` (`id`, `title`, `room_qnty`, `beds`, `bed_type`, `content`, `currency`, `price`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'Duplex Room', 2, 2, 'Single', 'Cozy duplex room with AC, TV, WiFi, and two single beds — perfect for a relaxed and comfortable stay.', 'NPR', 1500, '688f08eac91b7_duplex.JPG', '', '2025-08-03 09:05:56'),
+(2, 'Family Room', 5, 5, 'Double', 'Your family’s space: sofa seating, TV entertainment, reliable WiFi, cooling AC, and a balcony to step out and breathe.', 'NPR', 3500, '688f077caaf6e_image3.JPG', '', '2025-08-03 09:05:43'),
+(3, 'Premier Room', 10, 2, 'Double', 'A very comfortable room featuring air conditioning, TV, free WiFi, and room service — everything you need for a relaxed and hassle-free stay.', 'NPR', 2200, '688f0a29674af_premier.JPG', '', '2025-08-03 09:05:13');
 
 -- --------------------------------------------------------
 
@@ -112,7 +91,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `user_name`, `pass_word`, `created_at`, `updated_at`) VALUES
-(1, 'Samikshya Shrestha', 'samikshya@gmail.com', 'samikshya', 'shrestha', '2025-04-05', '2025-04-05');
+(1, 'Samikshya Shrestha', 'samikshya@gmail.com', 'Samikshya', '5f4dcc3b5aa765d61d8327deb882cf99', '2025-04-05', '2025-04-05'),
+(2, 'Evengila Tuladhar', 'evengila@gmail.com', 'Evengila', '5f4dcc3b5aa765d61d8327deb882cf99', '2025-04-05', '2025-04-05'),
+(3, 'Arbin Shrestha', 'arbin@gmail.com', 'Arbin', '5f4dcc3b5aa765d61d8327deb882cf99', '2025-04-05', '2025-04-05'),
+(4, 'Yabesh Lama', 'yabesh@gmail.com', 'Yabesh', '5f4dcc3b5aa765d61d8327deb882cf99', '2025-04-05', '2025-04-05');
 
 --
 -- Indexes for dumped tables
@@ -144,7 +126,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `rooms`
@@ -156,7 +138,7 @@ ALTER TABLE `rooms`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
