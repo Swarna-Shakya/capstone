@@ -75,6 +75,9 @@
                            <li class="nav-item">
                               <a class="nav-link" href="contact.php">Contact Us</a>
                            </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="admin" target="_blank">Admin</a>
+                           </li>
                         </ul>
                      </div>
                   </nav>
@@ -103,7 +106,7 @@
             <div class="col-md-5">
                <div class="titlepage">
                   <p class="margin_0">Welcome to IIMS Hotel, where we create an ideal setting through exceptional hospitality systems combined with modern innovative solutions. Through our superior services we offer personalized accommodation experiences that deliver comfort and memorable visits according to individual preferences. </p>
-                  <p>We at IIMS integrates sophisticated technology which includes our state-of-the-art chatbot so you can enhance your visit. Our accessibility during all hours of day lets customers reach the chatbot which guides through reservations while offering bespoke guidance and query answers to match what guests need.</p>
+                  <p>We at IIMS integrate sophisticated technology which includes our state-of-the-art chatbot so you can enhance your visit. Our accessibility during all hours of day lets customers reach the chatbot which guides through reservations while offering bespoke guidance and query answers to match what guests need.</p>
                </div>
             </div>
             <div class="col-md-7">
@@ -120,7 +123,7 @@
    <!--  footer -->
    <?php include 'include/footer.php'; ?>
    <!-- end footer -->
-    
+
    <!-- Javascript files-->
    <script src="js/jquery.min.js"></script>
    <script src="js/bootstrap.bundle.min.js"></script>

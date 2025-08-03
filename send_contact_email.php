@@ -3,7 +3,7 @@ require_once("include/class.phpmailer.php");
 
 $usermail = "7evanzelina@gmail.com";
 $sitename = "Capstone";
-$ccusermail = "";
+$ccusermail = "samikshyashr202@gmail.com";
 
 foreach ($_POST as $key => $val) {
     $$key = $val;

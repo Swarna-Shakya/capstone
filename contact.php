@@ -75,6 +75,9 @@
                            <li class="nav-item active">
                               <a class="nav-link" href="contact.php">Contact Us</a>
                            </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="admin" target="_blank">Admin</a>
+                           </li>
                         </ul>
                      </div>
                   </nav>

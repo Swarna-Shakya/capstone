@@ -81,6 +81,9 @@ $roomname = Rooms::find_by_id($roomId)->title ?? 'Room not found';
                                     <li class="nav-item">
                                         <a class="nav-link" href="contact.php">Contact Us</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="admin" target="_blank">Admin</a>
+                                    </li>
                                 </ul>
                             </div>
                         </nav>
@@ -144,7 +147,7 @@ $roomname = Rooms::find_by_id($roomId)->title ?? 'Room not found';
     <!--  footer -->
     <?php include_once("include/footer.php"); ?>
     <!-- end footer -->
-     
+
     <!-- Javascript files-->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
