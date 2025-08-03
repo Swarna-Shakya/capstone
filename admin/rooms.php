@@ -18,18 +18,42 @@ require_once '../include/initialize.php';
 	<link rel="stylesheet" href="assets/css/demo.css">
 
 	<style>
+		
+		.logo-header {
+			margin: 0;
+			padding: 0;
+			border-bottom: 0 !important;
+			background-color: #0f172a;
+		}
+
+		.wrapper {
+			margin: 0;
+			padding: 0;
+		}
+
+
+		nav,
+		header,
+		.navbar {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			background-color: #0f172a;
+		}
+
+
+		* {
+			box-shadow: none !important;
+			border: none !important;
+		}
+
+
 		body {
 			background-color: #f8fafc;
 			font-family: 'Nunito', sans-serif;
 			color: #1e293b;
 		}
-
-		.wrapper {
-			display: flex;
-			flex-direction: column;
-			min-height: 100vh;
-		}
-
+		
 		.main-panel {
 			background-color: #f8fafc;
 			margin-left: 250px;
@@ -126,12 +150,7 @@ require_once '../include/initialize.php';
 		.sidebar .logo {
 			color: #ffffff;
 		}
-
-		.logo-header {
-			background-color: #0f172a;
-			border-bottom: none !important;
-		}
-
+		
 		.footer {
 			padding: 1rem 2rem;
 			background-color: #f8fafc;
@@ -139,6 +158,24 @@ require_once '../include/initialize.php';
 			border-top: 1px solid #e5e7eb;
 			text-align: center;
 		}
+		.badge-count {
+		font-size: 0.75rem;
+		font-weight: 700;
+		padding: 0.25rem 0.6rem;
+		border-radius: 1rem;
+		min-width: 24px;
+		text-align: center;
+		display: inline-block;
+		background-color: #10b981; /* Tailwind emerald-500 */
+		color: white;
+		box-shadow: 0 0 5px #10b981aa;
+		transition: background-color 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.sidebar .nav-item:hover .badge-count {
+		background-color: #059669; /* Darker green on hover */
+		box-shadow: 0 0 8px #059669cc;
+	}
 	</style>
 </head>
 
